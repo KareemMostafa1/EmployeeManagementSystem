@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 class Employee:
     __company_name="AMIT"
     def __init__(self , ID , Name , Age , Position , Salary , Email ):
@@ -71,7 +72,7 @@ class EmployeeManager:
         print("\nPlease enter the Data of the new Employee .... \n")
 
         input_name=input("Employee name is : ")
-        if input_name.isalpha():
+        if bool(re.fullmatch(r"[A-Za-z\s]+", input_name)): 
             valid_name=input_name
         else:
             print("please enter a valid name")
@@ -196,9 +197,3 @@ while not Exit:  # Creating the user menu interface
 
         
 
-
-
-
-
-
-   
